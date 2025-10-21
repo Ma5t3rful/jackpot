@@ -1,0 +1,46 @@
+:root{
+    color-scheme: dark light;
+    --text-accent: #cdcdd9
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topheader{
+    height: 100dvh;
+    background: darkslateblue;
+    position: relative;
+}
+
+.maintitlebox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.maintitlebox p{
+    color: var(--text-accent);
+}
+
+.maintitle{
+    color: var(--text-accent);
+    text-align: center;
+}
+
+.bigdesc{
+    text-align: center;
+}
+
+.how{
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    transform: translate(0,-50%);
+    font-size: 14px;
+    color: var(--text-accent);
+}
