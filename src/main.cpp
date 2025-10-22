@@ -1,4 +1,6 @@
 #include "telegram_interface.hpp"
+#include <cstdlib>
+#include <stdexcept>
 #include <string>
 #include <cpr/cpr.h>
 #include "shuffler.hpp"
@@ -7,7 +9,9 @@
 
 auto main (int,char**) -> int
 {
-    TelegramInterface interface("7544314108:AAGWKrA4xrzSecOwueFg87R6Ap9efGYujCQ",[](const auto& message,auto* sender){
+    const auto bot_token = std::getenv("BOT_TOKEN");
+    if(not bot_token)throw std::runtime_error("Failed to poll environment variable: 'BOT_TOKEN'");
+    TelegramInterface interface(bot_token,[](const auto& message,auto* sender){
         if(not message.contains("text"))return;
         if(std::string(message["text"]).starts_with("/start"))
         {
