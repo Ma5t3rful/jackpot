@@ -1,5 +1,5 @@
 FROM ubuntu:25.04
-RUN apt update -y && apt upgrade -y && apt install -y gcc-15 g++-15 cmake make libssl-dev libzstd-dev git meson
+RUN apt update -y && apt upgrade -y && apt install -y gcc-15 g++-15 cmake make libssl-dev libpsl-dev libzstd-dev git meson
 COPY . /usr/shuffler-src
 RUN rm -fr /usr/shuffler-src/build/ /usr/shuffler-src/.cache/
 WORKDIR /usr/shuffler-src/build
